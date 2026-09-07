@@ -1,0 +1,3 @@
+clusterName: pokefinder-eks
+region: us-east-1
+vpcId: vpc-0c36e573f54aa0c1a

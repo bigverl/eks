@@ -23,11 +23,10 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Working notes — kept local, not pushed
+# misc
 .devnotes/
-
-# Claude Code project instructions — kept local, not pushed
 CLAUDE.md
+/docker
 
 # OS
 .DS_Store

@@ -21,11 +21,10 @@ module "eks" {
     }
   }
 
-  # Optional
+  # optional
   endpoint_public_access = true
 
-  # Optional: Adds the current caller identity as an administrator 
-  # via cluster access entry
+  # optional: adds the caller identity as admin via cluster access entry
   enable_cluster_creator_admin_permissions = true
 
   vpc_id                   = module.vpc.vpc_id
@@ -52,7 +51,7 @@ module "eks" {
 
 
 module "aws_lb_controller_pod_identity" {
-  source = "terraform-aws-modules/eks-pod-identity/aws"
+  source  = "terraform-aws-modules/eks-pod-identity/aws"
   version = "~> 2.0"
 
   name = "pokefinder-lbc"

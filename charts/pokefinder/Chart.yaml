@@ -1,0 +1,5 @@
+apiVersion: v2
+name: pokefinder
+version: 0.1.0
+description: pokefinder frontend and backend
+appVersion: "0.3.0"

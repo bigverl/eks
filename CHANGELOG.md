@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2026-09-30
+
+### Added
+- `pokefinder.net` custom domain routed at the ALB via Route 53, ACM wildcard cert for HTTPS (www and any other subdomain)
+- Implemented ExternalDNS K8s component to keep DNS record persistent rather than randomly-generated hostnames each time.
+- Deployed and confirmed through curl to `https://www.pokefinder.net/health/db`
+
 ## [0.5.0] - 2026-09-17
 
 ### Added

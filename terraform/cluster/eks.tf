@@ -32,6 +32,10 @@ module "eks" {
   subnet_ids               = module.vpc.private_subnets
   control_plane_subnet_ids = module.vpc.private_subnets
 
+  node_security_group_tags = {
+    "karpenter.sh/discovery" = "pokefinder-eks"
+  }
+
   eks_managed_node_groups = {
     example = {
       # default AMI type for EKS managed node groups

@@ -1,5 +1,5 @@
 data "aws_route53_zone" "this" {
-  zone_id = "Z018123937DY4QT4XC9OU" # the Registrar-created, actually-delegated zone
+  zone_id = "Z018123937DY4QT4XC9OU"
 }
 
 resource "aws_acm_certificate" "this" {

@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pokefinder
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/bigverl/eks.git
+    targetRevision: main
+    path: charts/pokefinder
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: pokefinder
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

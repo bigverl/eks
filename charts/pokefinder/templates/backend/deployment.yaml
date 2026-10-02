@@ -4,7 +4,6 @@ metadata:
   name: {{ .Release.Name }}-backend-deployment
   namespace: {{ .Release.Namespace }}
 spec:
-  replicas: {{ .Values.backend.replicas }}
   selector:
     matchLabels:
       app: pokefinder-backend

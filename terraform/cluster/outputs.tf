@@ -31,9 +31,9 @@ output "configure_kubectl" {
   ])
 }
 
-output "db_host" { 
+output "db_host" {
   description = "RDS host without port"
-  value = module.db.db_instance_address
+  value       = module.db.db_instance_address
 }
 
 output "create_backend_secret" {
@@ -44,19 +44,4 @@ output "create_backend_secret" {
     "--secret-id ${module.db.db_instance_master_user_secret_arn}",
     "--query SecretString --output text | jq -r .password)",
   ])
-}
-
-output "karpenter_iam_role_name" {
-  description = "Karpenter controller IAM role name"
-  value       = module.karpenter.iam_role_name
-}
-
-output "karpenter_instance_profile_name" {
-  description = "Instance profile for Karpenter-launched nodes"
-  value       = module.karpenter.instance_profile_name
-}
-
-output "karpenter_queue_name" {
-  description = "SQS queue for Karpenter spot interruption handling"
-  value       = module.karpenter.queue_name
 }

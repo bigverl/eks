@@ -9,7 +9,7 @@ module "security_group" {
     https = {
       from_port                    = 5432
       ip_protocol                  = "tcp"
-      referenced_security_group_id = module.eks.node_security_group_id
+      referenced_security_group_id = module.eks.cluster_primary_security_group_id
     }
     self-all = {
       ip_protocol                  = "-1"
@@ -26,15 +26,15 @@ module "security_group" {
 }
 
 module "db" {
-  source = "terraform-aws-modules/rds/aws"
-  identifier = "pokefinder-rds"
+  source            = "terraform-aws-modules/rds/aws"
+  identifier        = "pokefinder-rds"
   engine            = "postgres"
   engine_version    = "16"
   instance_class    = "db.t3.micro"
   allocated_storage = 10
-  db_name  = "pokefinder"
-  username = "pokefinder_admin"
-  port     = "5432"
+  db_name           = "pokefinder"
+  username          = "pokefinder_admin"
+  port              = "5432"
 
   manage_master_user_password = true
   vpc_security_group_ids      = [module.security_group.id]

@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.0] - 2026-10-02
+
+### Added
+- EKS Auto Mode enabled. Drop Managed Node Group and Karpenter
+- Add `IngressClass` and `IngressClassParams` for Auto Mode's built-in ALB controller. Replaces aws-alb-controller helm chart from before
+- Load tested with up to 13 backend replicas across 4 nodes. Confirmed scale up and back down
+
 ## [0.8.0] - 2026-10-02
 
 ### Added

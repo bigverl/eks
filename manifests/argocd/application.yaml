@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bigverl/eks.git
-    targetRevision: main
+    targetRevision: feat/v0.9.0-eks-auto-mode
     path: charts/pokefinder
   destination:
     server: https://kubernetes.default.svc

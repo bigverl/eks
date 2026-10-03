@@ -31,9 +31,9 @@ output "configure_kubectl" {
   ])
 }
 
-output "db_host" { 
+output "db_host" {
   description = "RDS host without port"
-  value = module.db.db_instance_address
+  value       = module.db.db_instance_address
 }
 
 output "create_backend_secret" {
